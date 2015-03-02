@@ -108,7 +108,6 @@ map! <C-k><C-d> <Esc>:w<Enter>i
 map  <C-g> %
 map! <C-g> <Esc>%i
 " Format paragraph 
-setl tw=77
 map  <C-k><C-j> gqip
 map! <C-k><C-j> <Esc>gqipi
 " help
