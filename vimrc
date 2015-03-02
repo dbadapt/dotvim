@@ -85,7 +85,6 @@ map! <C-k><C-x> <Esc>:x<Enter>
 map  <C-k><C-b> v
 map! <C-k><C-b> <Esc>v
 
-
 " MySQL recommended settings
 set tabstop=8
 set shiftwidth=2
@@ -102,9 +101,6 @@ let c_space_errors=1
 
 " path for GF
 set path+=.,include,../include,/usr/include
-
-" line numbering on
-set number
 
 " mouse on
 set mouse=a
