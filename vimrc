@@ -50,7 +50,7 @@ filetype plugin on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line             
 
-" Wordstar/Joeisms
+" Wordstar/Joeisims
 
 " Top of file
 map  <C-k><C-u> ggi
@@ -84,7 +84,35 @@ map! <C-k><C-x> <Esc>:x<Enter>
 " mark block
 map  <C-k><C-b> v
 map! <C-k><C-b> <Esc>v
+" split the window
+map  <C-k><C-o> :split<Enter>i
+map! <C-k><C-o> <Esc>:split<Enter>i 
+" next window
+map  <C-k><C-n> :wincmd j<Enter>
+map! <C-k><C-n> <Esc>:wincmd j<Enter>i
+" previous window
+map  <C-k><C-p> :wincmd k<Enter>
+map! <C-k><C-p> <Esc>:wincmd k<Enter>i
+" Ctrl-C quit
+map  <C-c> :q<Enter>
+" Load new file in current window
+map  <C-k><C-e> :new 
+map! <C-k><C-e> <Esc>:new 
+" Read new file at cursor postion
+map  <C-k><C-r> :read 
+map! <C-k><C-r> <Esc>:read 
+" Save
+map  <C-k><C-d> :w<Enter>
+map! <C-k><C-d> <Esc>:w<Enter>i
+" Go to matching brace
+map  <C-g> %
+map! <C-g> <Esc>%i
+" Format paragraph 
+setl tw=77
+map  <C-k><C-j> gqip
+map! <C-k><C-j> <Esc>gqipi
 
+"
 " MySQL recommended settings
 set tabstop=8
 set shiftwidth=2
