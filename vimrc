@@ -111,6 +111,9 @@ map! <C-g> <Esc>%i
 setl tw=77
 map  <C-k><C-j> gqip
 map! <C-k><C-j> <Esc>gqipi
+" help
+map  <C-k><C-h> :help<Enter>
+map! <C-k><C-h> <Esc>:help<Enter>
 
 "
 " MySQL recommended settings
