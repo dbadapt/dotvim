@@ -53,22 +53,22 @@ filetype plugin on
 " Wordstar/Joeisims
 
 " Top of file
-map  <C-k><C-u> ggi
+map  <C-k><C-u> gg
 map! <C-k><C-u> <Esc>ggi
 " End of file
-map  <C-k><C-v> Gi
+map  <C-k><C-v> G
 map! <C-k><C-v> <Esc>Gi
 " begining of line
-map  <C-a> 0i
+map  <C-a> 0
 map! <C-a> <Esc>0i
 " end of line
-map  <C-e> $a
+map  <C-e> $
 map! <C-e> <Esc>$a
 " delete line
-map  <C-y> ddi
+map  <C-y> dd
 map! <C-y> <Esc>ddi
 " delete to end of line
-map  <C-j> d$a
+map  <C-j> d$
 map! <C-j> <Esc>d$a
 " goto line
 map  <C-k><C-l> :
@@ -76,16 +76,16 @@ map! <C-k><C-l> <Esc>:
 " find
 map  <C-k><C-f> /
 map! <C-k><C-f> <Esc>/
-map  <C-l> /<Enter>i
-map! <C-l> <Esc>/<Enter>
+map  <C-l> /<Enter>
+map! <C-l> <Esc>/<Enter>i
 " Save and exit
 map  <C-k><C-x> :x<Enter>
-map! <C-k><C-x> <Esc>:x<Enter>
+map! <C-k><C-x> <Esc>:x<Enter>i
 " mark block
 map  <C-k><C-b> v
-map! <C-k><C-b> <Esc>v
+map! <C-k><C-b> <Esc>vi
 " split the window
-map  <C-k><C-o> :split<Enter>i
+map  <C-k><C-o> :split<Enter>
 map! <C-k><C-o> <Esc>:split<Enter>i 
 " next window
 map  <C-k><C-n> :wincmd j<Enter>
