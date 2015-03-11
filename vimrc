@@ -4,34 +4,37 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
+" Package manager
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
+" git plugin
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
+
+" file manager plug-in 
 Plugin 'git://git.wincent.com/command-t.git'
+
 " status/tabline
 Plugin 'bling/vim-airline'
-" The sparkup vim script is in a subdirectory of this repo called vim.  Pass
-" the path to set the runtimepath properly.
+
+" HTML plugin
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
 " supertab
 Plugin 'ervandew/supertab'
+
 " ultisnips
 Plugin 'SirVer/ultisnips'
+
 " snippets
 Plugin 'honza/vim-snippets'
+
 " perl completion
 Plugin 'c9s/perlomni.vim'
+
 " completion engine
 Plugin 'Valloric/YouCompleteMe'
 
@@ -62,7 +65,7 @@ map! <C-k><C-v> <Esc>Gi
 map  <C-a> 0
 map! <C-a> <Esc>0i
 " end of line
-map  <C-e> $
+map  <C-e> $a
 map! <C-e> <Esc>$a
 " delete line
 map  <C-y> dd
@@ -138,6 +141,13 @@ set mouse=a
 " syntax highlighting on
 syntax on
 colorscheme desert
+
+" Spell checking
+setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.md set complete+=kspell
+autocmd BufRead,BufNewFile *.txt set complete+=kspell
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
