@@ -125,7 +125,7 @@ set bs=2
 set et 
 set sts=2
 set tw=78
-set formatoptions=cqroa1
+set formatoptions=qr1
 set cinoptions=g0:0t0c2C1(0f0l1
 set cindent
 
@@ -157,5 +157,10 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" automatic backups
+set backup
+silent! call mkdir($HOME . '/.vim/.backups')
+set backupdir=~/.vim/.backups
+silent execute '!find ~/.vim/.backups -type f -mtime +30 -exec rm {} \;&'
 
