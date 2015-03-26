@@ -1,57 +1,63 @@
-" Vundle settings
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Make sure we have a recent version for Vundle
+if version >= 500
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+  " Vundle settings
+  set nocompatible              " be iMproved, required
+  filetype off                  " required
 
-" Package manager
-call vundle#begin()
+  " set the runtime path to include Vundle and initialize
+  set rtp+=~/.vim/bundle/Vundle.vim
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+  " Package manager
+  call vundle#begin()
 
-" git plugin
-Plugin 'tpope/vim-fugitive'
+  " let Vundle manage Vundle, required
+  Plugin 'gmarik/Vundle.vim'
 
-" file manager plug-in 
-Plugin 'git://git.wincent.com/command-t.git'
+  " git plugin
+  Plugin 'tpope/vim-fugitive'
 
-" status/tabline
-Plugin 'bling/vim-airline'
+  " file manager plug-in 
+  Plugin 'git://git.wincent.com/command-t.git'
 
-" HTML plugin
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+  " status/tabline
+  Plugin 'bling/vim-airline'
 
-" supertab
-Plugin 'ervandew/supertab'
+  " HTML plugin
+  Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-" ultisnips
-Plugin 'SirVer/ultisnips'
+  " supertab
+  Plugin 'ervandew/supertab'
 
-" snippets
-Plugin 'honza/vim-snippets'
+  " ultisnips
+  Plugin 'SirVer/ultisnips'
 
-" perl completion
-Plugin 'c9s/perlomni.vim'
+  " snippets
+  Plugin 'honza/vim-snippets'
 
-" completion engine
-Plugin 'Valloric/YouCompleteMe'
+  " perl completion
+  Plugin 'c9s/perlomni.vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line             
+  if version >= 740
+    " completion engine
+    Plugin 'Valloric/YouCompleteMe'
+  endif
+
+  " All of your Plugins must be added before the following line
+  call vundle#end()            " required
+  filetype plugin indent on    " required
+  " To ignore plugin indent changes, instead use:
+  filetype plugin on
+  "
+  " Brief help
+  " :PluginList       - lists configured plugins
+  " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+  " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+  " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+  "
+  " see :h vundle for more details or wiki for FAQ
+  " Put your non-Plugin stuff after this line             
+endif
 
 " Wordstar/Joeisims
 
@@ -136,7 +142,9 @@ let c_space_errors=1
 set path+=.,include,../include,/usr/include
 
 " mouse on
-set mouse=a
+if version >= 500
+  set mouse=a
+endif
 
 " syntax highlighting on
 syntax on
@@ -149,16 +157,18 @@ autocmd BufRead,BufNewFile *.txt set complete+=kspell
 hi clear SpellBad
 hi SpellBad cterm=underline
 
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+if version >= 740
+  " make YCM compatible with UltiSnips (using supertab)
+  let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+  let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+  let g:SuperTabDefaultCompletionType = '<C-n>'
 
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
+  " better key bindings for UltiSnipsExpandTrigger
+  let g:UltiSnipsExpandTrigger = "<tab>"
+  let g:UltiSnipsJumpForwardTrigger = "<tab>"
+endif
 
-" automatic backups
+" automatic backups (keep for 30 days)
 set backup
 silent! call mkdir($HOME . '/.vim/.backups')
 set backupdir=~/.vim/.backups
