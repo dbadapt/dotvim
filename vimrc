@@ -1,5 +1,5 @@
 " Make sure we have a recent version for Vundle
-if version >= 500
+if v:version >= 500
 
   " Vundle settings
   set nocompatible              " be iMproved, required
@@ -38,9 +38,11 @@ if version >= 500
   " perl completion
   Plugin 'c9s/perlomni.vim'
 
-  if version >= 740
+  if v:version > 703
+
     " completion engine
     Plugin 'Valloric/YouCompleteMe'
+
   endif
 
   " All of your Plugins must be added before the following line
@@ -142,8 +144,10 @@ let c_space_errors=1
 set path+=.,include,../include,/usr/include
 
 " mouse on
-if version >= 500
+if v:version >= 500
+
   set mouse=a
+
 endif
 
 " syntax highlighting on
@@ -157,7 +161,8 @@ autocmd BufRead,BufNewFile *.txt set complete+=kspell
 hi clear SpellBad
 hi SpellBad cterm=underline
 
-if version >= 740
+if v:version > 703
+
   " make YCM compatible with UltiSnips (using supertab)
   let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
   let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -166,6 +171,10 @@ if version >= 740
   " better key bindings for UltiSnipsExpandTrigger
   let g:UltiSnipsExpandTrigger = "<tab>"
   let g:UltiSnipsJumpForwardTrigger = "<tab>"
+
+  let g:ycm_server_use_vim_stdout = 1
+  let g:ycm_server_log_level = 'debug'
+
 endif
 
 " automatic backups (keep for 30 days)
