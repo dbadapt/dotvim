@@ -38,10 +38,16 @@ if v:version >= 500
   " perl completion
   Plugin 'c9s/perlomni.vim'
 
+  " syntastic
+  Plugin 'scrooloose/syntastic'
+
   if v:version > 703
 
     " completion engine
     Plugin 'Valloric/YouCompleteMe'
+
+    " config generator for C/C++
+    Plugin 'rdnetto/YCM-Generator'
 
   endif
 
@@ -141,7 +147,7 @@ set cindent
 let c_space_errors=1
 
 " path for GF
-set path+=.,include,../include,/usr/include
+set path+=.,include,../include,/usr/include,/usr/include/mysql,/usr/include/cppconn
 
 " mouse on
 if v:version >= 500
@@ -174,6 +180,8 @@ if v:version > 703
 
   let g:ycm_server_use_vim_stdout = 1
   let g:ycm_server_log_level = 'debug'
+
+  let g:ycm_confirm_extra_conf = 0
 
 endif
 
