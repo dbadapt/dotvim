@@ -191,3 +191,7 @@ silent! call mkdir($HOME . '/.vim/.backups')
 set backupdir=~/.vim/.backups
 silent execute '!find ~/.vim/.backups -type f -mtime +30 -exec rm {} \;&'
 
+" initialize airline
+set laststatus=2
+set ttimeoutlen=50
+
