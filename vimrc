@@ -41,6 +41,9 @@ if v:version >= 500
   " syntastic
   Plugin 'scrooloose/syntastic'
 
+  " tagbar
+  Plugin 'majutsushi/tagbar'
+
   if v:version > 703
 
     " completion engine
@@ -194,4 +197,7 @@ silent execute '!find ~/.vim/.backups -type f -mtime +30 -exec rm {} \;&'
 " initialize airline
 set laststatus=2
 set ttimeoutlen=50
+
+" initialize tagbar
+nmap <F8> :TagbarToggle<CR>
 
