@@ -51,6 +51,10 @@ if v:version >= 500
     " neocomplete
     Plugin 'Shougo/neocomplete'
 
+  else
+
+   let _neocompleteloaded = 0 
+
   endif
 
   " All of your Plugins must be added before the following line
