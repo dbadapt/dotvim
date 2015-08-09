@@ -170,7 +170,7 @@ autocmd BufRead,BufNewFile *.txt set complete+=kspell
 hi clear SpellBad
 hi SpellBad cterm=underline
 
-if v:version > 703
+if v:version > 703 && filereadable($HOME . "/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so")
 
   " make YCM compatible with UltiSnips (using supertab)
   let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
