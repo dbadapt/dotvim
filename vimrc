@@ -42,11 +42,15 @@ if v:version >= 500
   " perl completion
   Plugin 'c9s/perlomni.vim'
 
-  " syntastic
-  Plugin 'scrooloose/syntastic'
+  if v:version > 701 || ( v:version == 701 && has('patch175') )
 
-  " tagbar
-  Plugin 'majutsushi/tagbar'
+    " syntastic
+    Plugin 'scrooloose/syntastic'
+
+    " tagbar
+    Plugin 'majutsushi/tagbar'
+
+  endif    
 
   " completion based on platform
   "
