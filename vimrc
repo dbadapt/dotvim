@@ -178,6 +178,11 @@ if _neocompleteloaded == 1
   let g:neocomplete#enable_at_startup = 1
   autocmd VimEnter * NeoCompleteEnable
 
+else
+
+  filetype plugin on
+  set omnifunc=syntaxcomplete#Complete
+
 endif
 
 " automatic backups (keep for 30 days)
