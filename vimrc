@@ -111,8 +111,8 @@ map! <C-e> <Esc>$a
 map  <C-y> dd
 map! <C-y> <Esc>ddi
 " delete to end of line
-map  <C-j> d$
-map! <C-j> <Esc>d$a
+"map  <C-j> d$
+"map! <C-j> <Esc>d$a
 " goto line
 map  <C-k><C-l> :
 map! <C-k><C-l> <Esc>:
@@ -201,9 +201,9 @@ if _completerType == 'ycm'
   let g:SuperTabDefaultCompletionType = '<C-n>'
 
   " better key bindings for UltiSnipsExpandTrigger
-  let g:UltiSnipsExpandTrigger = "<tab>"
-  let g:UltiSnipsJumpForwardTrigger = "<tab>"
-  let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+  let g:UltiSnipsExpandTrigger = "<c-j>"
+  let g:UltiSnipsJumpForwardTrigger = "<c-b>"
+  let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
 elseif _completerType == 'neo'
 
@@ -232,4 +232,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " change paste behavior
 nnoremap p P
+
+" turn off REPLACE toggle
+map! <Ins> <Esc>i
 
