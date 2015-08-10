@@ -1,4 +1,4 @@
-" Make sure we have a recent version for Vundle
+
 if v:version >= 500
 
   " Vundle settings
@@ -29,8 +29,12 @@ if v:version >= 500
   " supertab
   Plugin 'ervandew/supertab'
 
-  " ultisnips
-  Plugin 'SirVer/ultisnips'
+  if v:version >= 704
+
+    " ultisnips
+    Plugin 'SirVer/ultisnips'
+
+  endif 
 
   " snippets
   Plugin 'honza/vim-snippets'
@@ -38,11 +42,15 @@ if v:version >= 500
   " perl completion
   Plugin 'c9s/perlomni.vim'
 
-  " syntastic
-  Plugin 'scrooloose/syntastic'
+  if v:version > 701 || ( v:version == 701 && has('patch175') )
 
-  " tagbar
-  Plugin 'majutsushi/tagbar'
+    " syntastic
+    Plugin 'scrooloose/syntastic'
+
+    " tagbar
+    Plugin 'majutsushi/tagbar'
+
+  endif    
 
   " completion based on platform
   "
