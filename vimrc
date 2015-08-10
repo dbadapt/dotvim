@@ -219,3 +219,6 @@ set ttimeoutlen=50
 " initialize tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" change paste behavior
+nnoremap p P
+
