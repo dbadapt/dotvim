@@ -1,4 +1,4 @@
-" Make sure we have a recent version for Vundle
+
 if v:version >= 500
 
   " Vundle settings
@@ -29,8 +29,12 @@ if v:version >= 500
   " supertab
   Plugin 'ervandew/supertab'
 
-  " ultisnips
-  Plugin 'SirVer/ultisnips'
+  if v:version >= 704
+
+    " ultisnips
+    Plugin 'SirVer/ultisnips'
+
+  endif 
 
   " snippets
   Plugin 'honza/vim-snippets'
