@@ -61,6 +61,9 @@ if v:version >= 500
     " YCM
     Plugin 'Valloric/YouCompleteMe' 
 
+    " YCM Generator
+    Plugin 'rdnetto/YCM-Generator'
+
   elseif has('lua') && ( v:version > 703 || ( v:version == 703 &&  has('patch885') ) )
 
     let _completerType = 'neo'
