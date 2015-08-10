@@ -44,16 +44,25 @@ if v:version >= 500
   " tagbar
   Plugin 'majutsushi/tagbar'
 
-  if has('lua') && ( v:version > 703 || ( v:version == 703 &&  has('patch885') ) )
+  " completion based on platform
+  "
+  if filereadable($HOME . '/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so')
 
-   let _neocompleteloaded = 1 
+    let _completerType = 'ycm'
+
+    " YCM
+    Plugin 'Valloric/YouCompleteMe' 
+
+  elseif has('lua') && ( v:version > 703 || ( v:version == 703 &&  has('patch885') ) )
+
+    let _completerType = 'neo'
 
     " neocomplete
     Plugin 'Shougo/neocomplete'
 
   else
 
-   let _neocompleteloaded = 0 
+    let _completerType = 'omni' 
 
   endif
 
@@ -173,7 +182,19 @@ autocmd BufRead,BufNewFile *.txt set complete+=kspell
 hi clear SpellBad
 hi SpellBad cterm=underline
 
-if _neocompleteloaded == 1 
+if _completerType == 'ycm'
+
+  " make YCM compatible with UltiSnips (using supertab)
+  let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+  let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+  let g:SuperTabDefaultCompletionType = '<C-n>'
+
+  " better key bindings for UltiSnipsExpandTrigger
+  let g:UltiSnipsExpandTrigger = "<tab>"
+  let g:UltiSnipsJumpForwardTrigger = "<tab>"
+  let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+elseif _completerType == 'neo'
 
   let g:neocomplete#enable_at_startup = 1
   autocmd VimEnter * NeoCompleteEnable
