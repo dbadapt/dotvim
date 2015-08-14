@@ -111,8 +111,8 @@ map! <C-e> <Esc>$a
 map  <C-y> dd
 map! <C-y> <Esc>ddi
 " delete to end of line
-"map  <C-j> d$
-"map! <C-j> <Esc>d$a
+map  <C-j> d$
+map! <C-j> <Esc>d$a
 " goto line
 map  <C-k><C-l> :
 map! <C-k><C-l> <Esc>:
@@ -200,10 +200,11 @@ if _completerType == 'ycm'
   let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
   let g:SuperTabDefaultCompletionType = '<C-n>'
 
+  " ultisnips is broken atm
   " better key bindings for UltiSnipsExpandTrigger
-  let g:UltiSnipsExpandTrigger = "<c-j>"
-  let g:UltiSnipsJumpForwardTrigger = "<c-b>"
-  let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
+"  let g:UltiSnipsExpandTrigger = "<c-j>"
+"  let g:UltiSnipsJumpForwardTrigger = "<c-b>"
+"  let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
 elseif _completerType == 'neo'
 
