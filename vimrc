@@ -185,6 +185,7 @@ endif
 " syntax highlighting on
 syntax on
 colorscheme desert
+hi Comment ctermfg=LightBlue
 
 " Spell checking
 setlocal spell spelllang=en_us
