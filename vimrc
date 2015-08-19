@@ -202,6 +202,7 @@ if _completerType == 'ycm'
   let g:SuperTabDefaultCompletionType = '<C-n>'
   let g:ycm_extra_conf_globlist = ['~/*','/ssd/*']
 
+  " ultisnips is broken atm
   " better key bindings for UltiSnipsExpandTrigger
 "  let g:UltiSnipsExpandTrigger = "<c-j>"
 "  let g:UltiSnipsJumpForwardTrigger = "<c-b>"
