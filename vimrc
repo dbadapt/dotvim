@@ -29,6 +29,12 @@ if v:version >= 500
   " supertab
   Plugin 'ervandew/supertab'
 
+  " easily locate cursor after search
+  Plugin 'inside/vim-search-pulse'
+
+  " improved incremental searching
+  Plugin 'haya14busa/incsearch.vim'
+
   if v:version >= 704
 
     " ultisnips
@@ -93,6 +99,25 @@ if v:version >= 500
   " Put your non-Plugin stuff after this line             
 endif
 
+" incsearch and vim search pulse
+let g:vim_search_pulse_disable_auto_mappings = 1
+let g:incsearch#auto_nohlsearch = 1
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" Next or previous match is followed by a Pulse
+map n <Plug>(incsearch-nohl-n)<Plug>Pulse
+map N <Plug>(incsearch-nohl-N)<Plug>Pulse
+map * <Plug>(incsearch-nohl-*)<Plug>Pulse
+map # <Plug>(incsearch-nohl-#)<Plug>Pulse
+map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
+map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
+
+" Pulses the first match after hitting the enter keyan
+autocmd! User IncSearchExecute
+autocmd User IncSearchExecute :call search_pulse#Pulse()
+
 " Wordstar/Joeisims
 
 " Top of file
@@ -119,6 +144,8 @@ map! <C-k><C-l> <Esc>:
 " find
 map  <C-k><C-f> /
 map! <C-k><C-f> <Esc>/
+
+" find next
 map  <C-l> /<Enter>
 map! <C-l> <Esc>/<Enter>i
 " Save and exit
@@ -156,6 +183,12 @@ map! <C-k><C-j> <Esc>gqipi
 " help
 map  <C-k><C-h> :help<Enter>
 map! <C-k><C-h> <Esc>:help<Enter>
+" undo
+map  <C-_> :u<Enter> 
+map! <C-_> <Esc>:u<Enter>i
+" redo
+map  <C-^> :red<Enter> 
+map! <C-^> <Esc>:red<Enter>i
 
 "
 " MySQL recommended settings
