@@ -155,7 +155,7 @@ map! <C-k><C-f> <Esc>/
 
 " find next
 map  <C-l> n
-map! <C-l> <Esc>ni
+map! <C-l> <Esc>n
 " Save and exit
 map  <C-k><C-x> :x<Enter>
 map! <C-k><C-x> <Esc>:x<Enter>i
