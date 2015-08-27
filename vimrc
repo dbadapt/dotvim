@@ -29,11 +29,15 @@ if v:version >= 500
   " supertab
   Plugin 'ervandew/supertab'
 
-  " easily locate cursor after search
-  Plugin 'inside/vim-search-pulse'
+  if v:version >= 703
 
-  " improved incremental searching
-  Plugin 'haya14busa/incsearch.vim'
+    " easily locate cursor after search
+    Plugin 'inside/vim-search-pulse'
+
+    " improved incremental searching
+    Plugin 'haya14busa/incsearch.vim'
+
+  endif
 
   if v:version >= 704
 
@@ -99,24 +103,28 @@ if v:version >= 500
   " Put your non-Plugin stuff after this line             
 endif
 
-" incsearch and vim search pulse
-let g:vim_search_pulse_disable_auto_mappings = 1
-let g:incsearch#auto_nohlsearch = 1
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+if v:version >= 703
 
-" Next or previous match is followed by a Pulse
-map n <Plug>(incsearch-nohl-n)<Plug>Pulse
-map N <Plug>(incsearch-nohl-N)<Plug>Pulse
-map * <Plug>(incsearch-nohl-*)<Plug>Pulse
-map # <Plug>(incsearch-nohl-#)<Plug>Pulse
-map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
-map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
+  " incsearch and vim search pulse
+  let g:vim_search_pulse_disable_auto_mappings = 1
+  let g:incsearch#auto_nohlsearch = 1
+  map / <Plug>(incsearch-forward)
+  map ? <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
 
-" Pulses the first match after hitting the enter keyan
-autocmd! User IncSearchExecute
-autocmd User IncSearchExecute :call search_pulse#Pulse()
+  " Next or previous match is followed by a Pulse
+  map n <Plug>(incsearch-nohl-n)<Plug>Pulse
+  map N <Plug>(incsearch-nohl-N)<Plug>Pulse
+  map * <Plug>(incsearch-nohl-*)<Plug>Pulse
+  map # <Plug>(incsearch-nohl-#)<Plug>Pulse
+  map g* <Plug>(incsearch-nohl-g*)<Plug>Pulse
+  map g# <Plug>(incsearch-nohl-g#)<Plug>Pulse
+
+  " Pulses the first match after hitting the enter keyan
+  autocmd! User IncSearchExecute
+  autocmd User IncSearchExecute :call search_pulse#Pulse()
+
+endif
 
 " Wordstar/Joeisims
 
