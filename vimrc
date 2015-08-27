@@ -154,8 +154,8 @@ map  <C-k><C-f> /
 map! <C-k><C-f> <Esc>/
 
 " find next
-map  <C-l> /<Enter>
-map! <C-l> <Esc>/<Enter>i
+map  <C-l> n
+map! <C-l> <Esc>ni
 " Save and exit
 map  <C-k><C-x> :x<Enter>
 map! <C-k><C-x> <Esc>:x<Enter>i
@@ -282,4 +282,7 @@ map! <Ins> <Esc>i
 
 " set modeline for modes in comments
 set modeline
+
+" don't go back one char when escaping from insert mode
+inoremap <silent> <Esc> <Esc>`^
 
