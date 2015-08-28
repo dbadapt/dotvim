@@ -288,12 +288,12 @@ set modeline
 vnoremap > >gv
 vnoremap < <gv
 
-map <S-Down> v<Down>
-map! <S-Down> <Esc><Right>v<Down>
+map <S-Down> V<Down>
+map! <S-Down> <Esc><Right>V<Down>
 vnoremap <S-Down> <Down>
 
-map <S-Up> v<Up>
-map! <S-Up> <Esc><Right>v<Up>
+map <S-Up> V<Up>
+map! <S-Up> <Esc><Right>V<Up>
 vnoremap <S-Up> <Up>
 
 map <S-Right> v<Right>
