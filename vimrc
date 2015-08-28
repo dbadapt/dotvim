@@ -303,3 +303,14 @@ vnoremap <S-Right> <Right>
 map <S-Left> v<Left>
 map! <S-Left> <Esc><Right>v<Left>
 vnoremap <S-Left> <Left>
+
+" cut
+vnoremap <C-X> d
+
+" copy
+vnoremap <C-C> y
+
+" paste
+map <C-V> p
+map! <C-V> <Esc>pi
+
