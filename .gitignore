@@ -1,2 +1,5 @@
-bundle/*
+# ignore these files
+bundle/**
+.backups/*
+.netrwhist
 

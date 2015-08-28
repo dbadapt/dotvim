@@ -6,6 +6,7 @@ if awk "BEGIN{exit ${VIMVER} < 7.4 ? 0 : 1}"; then
   ln -s ~/.vim/vimrc ~/.vimrc
 fi  
 
+mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
 if [ ! -e Vundle.vim/.git/config ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
