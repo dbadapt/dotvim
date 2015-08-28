@@ -283,3 +283,23 @@ map! <Ins> <Esc>i
 
 " set modeline for modes in comments
 set modeline
+
+" a few visual select behaviors I like 
+vnoremap > >gv
+vnoremap < <gv
+
+map <S-Down> v<Down>
+map! <S-Down> <Esc><Right>v<Down>
+vnoremap <S-Down> <Down>
+
+map <S-Up> v<Up>
+map! <S-Up> <Esc><Right>v<Up>
+vnoremap <S-Up> <Up>
+
+map <S-Right> v<Right>
+map! <S-Right> <Esc><Right>v<Right>
+vnoremap <S-Right> <Right>
+
+map <S-Left> v<Left>
+map! <S-Left> <Esc><Right>v<Left>
+vnoremap <S-Left> <Left>
