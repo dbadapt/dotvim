@@ -146,7 +146,7 @@ map  <C-y> dd
 map! <C-y> <Esc>ddi
 " delete to end of line
 map  <C-j> d$
-map! <C-j> <Esc>d$a
+map! <C-j> <Esc><Right>d$a
 " goto line
 map  <C-k><C-l> :
 map! <C-k><C-l> <Esc>:
