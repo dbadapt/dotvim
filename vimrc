@@ -88,6 +88,9 @@ if v:version >= 500
 
   endif
 
+  " restore cursor position 
+  Plugin 'restore_view.vim'
+
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
   filetype plugin indent on    " required
@@ -313,4 +316,8 @@ vnoremap <C-C> y
 " paste
 map <C-V> p
 map! <C-V> <Esc>pi
+
+" restore_view
+set viewoptions=cursor,folds,slash,unix
+" let g:skipview_files = ['*\.vim']
 
