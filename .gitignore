@@ -2,4 +2,5 @@
 bundle/**
 .backups/*
 .netrwhist
+view/**
 
