@@ -321,3 +321,5 @@ map! <C-V> <Esc>pi
 set viewoptions=cursor,folds,slash,unix
 " let g:skipview_files = ['*\.vim']
 
+" let all *.md files be markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
