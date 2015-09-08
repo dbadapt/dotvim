@@ -15,6 +15,9 @@ if v:version >= 500
   " let Vundle manage Vundle, required
   Plugin 'gmarik/Vundle.vim'
 
+  " .localvimrc files
+  Plugin 'embear/vim-localvimrc'
+
   " git plugin
   Plugin 'tpope/vim-fugitive'
 
