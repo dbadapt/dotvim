@@ -11,5 +11,8 @@ cd ~/.vim/bundle
 if [ ! -e Vundle.vim/.git/config ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
 fi
+
+find ~/.vim/bundle -mindepth 1 -maxdepth 1 -type d -exec /bin/bash -c 'cd {}; git pull' \;
+
 vim +PluginInstall +qall
 
