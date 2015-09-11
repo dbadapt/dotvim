@@ -64,6 +64,9 @@ if v:version >= 500
     " tagbar
     Plugin 'majutsushi/tagbar'
 
+    " CtrlP - fuzzy tag search
+    Plugin 'ctrlpvim/ctrlp.vim'
+
   endif    
 
   " completion based on platform
@@ -326,3 +329,7 @@ set viewoptions=cursor,folds,slash,unix
 
 " let all *.md files be markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" look up for tags
+set tags=./tags;/
+
