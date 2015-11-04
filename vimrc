@@ -98,7 +98,7 @@ if v:version >= 500
   Plugin 'restore_view.vim'
 
   " autoload cscope.out from current -> parents
-  Plugin 'dbpercona/autoload_cscope.vim' 
+  "Plugin 'dbpercona/autoload_cscope.vim' 
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
