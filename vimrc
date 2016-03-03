@@ -62,7 +62,7 @@ if v:version >= 500
     Plugin 'scrooloose/syntastic'
 
     " tagbar
-    Plugin 'majutsushi/tagbar'
+    " Plugin 'majutsushi/tagbar'
 
     " CtrlP - fuzzy tag search
     Plugin 'ctrlpvim/ctrlp.vim'
@@ -97,8 +97,7 @@ if v:version >= 500
   " restore cursor position 
   Plugin 'restore_view.vim'
 
-  " autoload cscope.out from current -> parents
-  "Plugin 'dbpercona/autoload_cscope.vim' 
+  Plugin 'tranngocthachs/gtags-cscope-vim-plugin'
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
@@ -334,5 +333,8 @@ set viewoptions=cursor,folds,slash,unix
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " look up for tags
-set tags=./tags;/
-
+set tags=./tags,tags;
+let GtagsCscope_Auto_Load = 1
+let GtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
+set cscopetag
