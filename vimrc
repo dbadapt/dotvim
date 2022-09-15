@@ -81,7 +81,7 @@ if v:version >= 500
     " YCM Generator
     Plugin 'rdnetto/YCM-Generator'
 
-  elseif has('lua') && ( v:version > 703 || ( v:version == 703 &&  has('patch885') ) )
+  elseif has('lua') && ( v:version > 703 || ( v:version == 703 &&  has('patch885') ) ) && v:version < 802
 
     let _completerType = 'neo'
 
